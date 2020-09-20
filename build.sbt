@@ -123,7 +123,7 @@ lazy val docs = (project in file("generated-docs"))
   , docusaurDir := (ThisBuild / baseDirectory).value / "website"
   , docusaurBuildDir := docusaurDir.value / "build"
 
-  , gitHubPagesOrgName := "hedgehogqa"
+  , gitHubPagesOrgName := "Kevin-Lee"
   , gitHubPagesRepoName := "scala-hedgehog"
   )
   .settings(noPublish)

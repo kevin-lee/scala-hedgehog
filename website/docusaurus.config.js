@@ -10,8 +10,8 @@ const isSearchable = !isEmptyObject(algoliaConfig)
 const websiteConfig = {
   title: 'Hedgehog',
   tagline: 'Modern property-based testing system for Scala',
-  url: 'https://hedgehogqa.github.io',
-  baseUrl: '/scala-hedgehog/',
+  url: 'https://testing.kevinly.dev',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.png',
   organizationName: 'hedgehogqa', // Usually your GitHub org/user name.
