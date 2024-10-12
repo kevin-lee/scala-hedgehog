@@ -1,4 +1,4 @@
-ThisBuild / organization := "qa.hedgehog"
+ThisBuild / organization := "io.kevinlee"
 ThisBuild / developers := List(
   Developer("charleso", "Charles O'Farrell", "charleso@gmail.com", url("https://github.com/charleso")),
 )
@@ -260,6 +260,9 @@ lazy val props = new {
   val ProjectScalaVersion = "2.13.10"
   val CrossScalaVersions = Seq("2.12.19", ProjectScalaVersion, "3.1.3")
 
+  val SonatypeCredentialHost = "s01.oss.sonatype.org"
+  val SonatypeRepository     = s"https://$SonatypeCredentialHost/service/local"
+
   val PortableScalaReflectVersion = "1.1.3"
 
   val MinitestVersion_2_11 = "2.8.2"
@@ -278,7 +281,7 @@ lazy val standardSettings: Seq[Setting[_]] = Seq(
   Defaults.coreDefaultSettings,
   projectSettings,
   compilationSettings,
-).flatten
+).flatten ++ mavenCentralPublishSettings
 
 lazy val nativeSettings: SettingsDefinition = List(
   Test / fork := false
@@ -289,4 +292,11 @@ lazy val noPublish = Seq(
   publishLocal := {},
   publishArtifact := false,
   publish / skip := true,
+)
+
+lazy val mavenCentralPublishSettings: SettingsDefinition = List(
+  /* Publish to Maven Central { */
+  sonatypeCredentialHost := props.SonatypeCredentialHost,
+  sonatypeRepository := props.SonatypeRepository,
+  /* } Publish to Maven Central */
 )

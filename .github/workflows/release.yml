@@ -13,7 +13,7 @@ env:
 
 jobs:
   build_and_publish:
-    if: github.repository == 'hedgehogqa/scala-hedgehog'
+    if: github.repository == 'kevin-lee/scala-hedgehog'
 
     runs-on: ubuntu-latest
 
